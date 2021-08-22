@@ -1,3 +1,75 @@
 .img{
   margin-top: -100px;
 }
+
+.text-bug {
+  color: #92BC2C;
+}
+
+.text-dark {
+  color: #595761;
+}
+
+.text-dragon {
+  color: #0C69C8;
+}
+
+.text-electric {
+  color: #F2D94E;
+}
+
+.text-fire {
+  color: #FBA54C;
+}
+
+.text-fairy {
+  color: #EE90E6;
+}
+
+.text-fighting {
+  color: #D3425F;
+}
+
+.text-flying {
+  color: #A1BBEC;
+}
+
+.text-ghost {
+  color: #5F6DBC;
+}
+
+.text-grass {
+  color: #5FBD58;
+}
+
+.text-ground {
+  color: #DA7C4D;
+}
+
+.text-ice {
+  color: #75D0C1;
+}
+
+.text-normal {
+  color: #A0A29F;
+}
+
+.text-poison {
+  color: #B763CF;
+}
+
+.text-psychic {
+  color: #FA8581;
+}
+
+.text-rock {
+  color: #C9BB8A;
+}
+
+.text-steel {
+  color: #5695A3;
+}
+
+.text-water {
+  color: #539DDF;
+}

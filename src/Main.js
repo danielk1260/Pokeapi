@@ -8,7 +8,7 @@ import Logo from "./resources/images/logo.gif";
 
 
 const Main = () => {
-  document.body.classList.add("background-body");
+  document.body.classList.add("background-body-dark");
 
   const [pokemon, setPokemon] = useState([]);
 

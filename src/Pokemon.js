@@ -1,5 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Container, Divider, Grid, Header, Image, Label, Progress, Segment } from "semantic-ui-react";
+import {
+  Container,
+  Divider,
+  Grid,
+  Header,
+  Image,
+  Label,
+  Progress,
+  Segment,
+} from "semantic-ui-react";
 import axios from "axios";
 
 import Waves from "./components/waves/Waves";
@@ -46,7 +55,6 @@ const Pokemon = () => {
   return (
     <>
       <Container>
-        
         <Grid verticalAlign="middle" columns={4} centered>
           <Grid.Row>
             <Grid.Column>
@@ -63,8 +71,8 @@ const Pokemon = () => {
               />
             </Grid.Column>
             <Grid.Column width={8}>
-            <Image src={Logo} alt="logo" size="large" centered />
-            
+              <Image src={Logo} alt="logo" size="large" centered />
+
               <div className="pokebounce">
                 <Img data={id} />
               </div>

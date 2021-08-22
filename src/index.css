@@ -21,6 +21,18 @@
 
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#74B4F3", endColorstr="#203040", GradientType=1 );
 }
+
+.background-body-dark{
+  background: hsla(0, 0%, 100%, 1);
+
+background: radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 57%, 1) 100%);
+
+background: -moz-radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 57%, 1) 100%);
+
+background: -webkit-radial-gradient(circle, hsla(0, 0%, 100%, 1) 0%, hsla(0, 0%, 57%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FFFFFF", endColorstr="#929292", GradientType=1 );
+}
 .foot {
   background-color: white;
   margin-top: -5px;

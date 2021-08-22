@@ -1,36 +1,38 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Header, Image, Label, Segment } from "semantic-ui-react";
-// import Descriptions from "../helpers/Descriptions";
+import { Dimmer, Image, Label, Loader, Segment } from "semantic-ui-react";
 import { upperCase } from "../helpers/Functions";
 import Icon from "../icons/Icon";
 import "./styles.css";
 
 const Thumbnail = ({ data }) => {
   const [state, setState] = useState({ type: [] });
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const apiCall = async () => {
       const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${data}`);
+      setLoading(false);
       setState({
         id: res.data.id,
         type: res.data.types,
+        typeone : res.data.types[0].type.name,
         img: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${res.data.id}.png`,
       });
     };
     apiCall();
   }, [data]);
-
+console.log(state.typeone)
   return (
     <>
       <Segment raised>
-        <Header as="h2">
+        
+        <h1 className={ 'text-' + state.typeone }>
           {upperCase(data)}
-          <Header.Subheader>
-            {/* <Descriptions id={state.id} /> */}
-          </Header.Subheader>
-        </Header>
-
+        </h1>
+        <Dimmer active={loading}>
+          <Loader content="Loading" />
+        </Dimmer>
         <Icon data={state.type} />
 
         <Image
@@ -43,7 +45,7 @@ const Thumbnail = ({ data }) => {
           as="a"
           href={"pokemon/" + state.id}
         />
-        <Label content={"#" + state.id} color="pink" floating />
+        <Label content={"#" + state.id} color="teal" floating />
       </Segment>
     </>
   );
