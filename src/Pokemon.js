@@ -1,14 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  Container,
-  Divider,
-  Grid,
-  Header,
-  Image,
-  Label,
-  Progress,
-  Segment,
-} from "semantic-ui-react";
+import { Container, Divider, Grid, Header, Image, Label, Progress, Segment } from "semantic-ui-react";
 import axios from "axios";
 
 import Waves from "./components/waves/Waves";
