@@ -12,29 +12,28 @@ const Thumbnail = ({ data }) => {
   useEffect(() => {
     const apiCall = async () => {
       const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${data}`);
-      setLoading(false);
       setState({
         id: res.data.id,
         type: res.data.types,
-        typeone : res.data.types[0].type.name,
+        typeone: res.data.types[0].type.name,
         img: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${res.data.id}.png`,
       });
+      setLoading(false);
     };
     apiCall();
   }, [data]);
-console.log(state.typeone)
-  return (
-    <>
-      <Segment raised>
-        
-        <h1 className={ 'text-' + state.typeone }>
-          {upperCase(data)}
-        </h1>
-        <Dimmer active={loading}>
-          <Loader content="Loading" />
-        </Dimmer>
-        <Icon data={state.type} />
 
+  if (loading === true) {
+    return (
+      <Dimmer active={loading}>
+        <Loader content="Loading..." />
+      </Dimmer>
+    );
+  }else{
+    return (
+      <Segment raised>
+        <h1 className={"text-" + state.typeone}>{upperCase(data)}</h1>
+        <Icon data={state.type} />
         <Image
           src={state.img}
           alt={state.id}
@@ -47,8 +46,7 @@ console.log(state.typeone)
         />
         <Label content={"#" + state.id} color="teal" floating />
       </Segment>
-    </>
-  );
+  );}
 };
 
 export default Thumbnail;
