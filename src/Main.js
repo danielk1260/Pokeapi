@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Container, Dimmer, Grid, Image, Loader, Pagination, Segment } from "semantic-ui-react";
+import { Container, Dimmer, Grid, Header, Image, Pagination, Segment } from "semantic-ui-react";
 import axios from "axios";
 
 import "./index.css";
 import Thumbnail from "./components/thumbnail/Thumbnail";
 import Logo from "./resources/images/logo.gif";
+import loader from "./resources/images/loader_full.gif";
+
 
 const Main = () => {
   document.body.classList.add("background-body-dark");
@@ -40,7 +42,7 @@ const Main = () => {
     } else {
       setUrl(pokemon.previous);
     }
-    
+
     setActualPage(data.activePage);
     setLoading(true);
   };
@@ -48,7 +50,8 @@ const Main = () => {
   if (loading === true) {
     return (
       <Dimmer active={loading}>
-        <Loader content="Loading data..." />
+        <Image src={loader} alt='Loading data...' />
+        <Header as="h1" content='Loading Data...' inverted />
       </Dimmer>
     );
   } else {
