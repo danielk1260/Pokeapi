@@ -75,8 +75,8 @@ const Main = () => {
             ellipsisItem={null}
             firstItem={null}
             lastItem={null}
-            siblingRange={1}
-            totalPages={pokemon.data.length}
+            siblingRange={0}
+            totalPages={1118/20}
             onPageChange={pageChange}
           />
         </Segment>

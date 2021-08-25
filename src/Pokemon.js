@@ -45,7 +45,7 @@ const Pokemon = () => {
 
     apiCall();
   }, [id]);
-  console.log(pokemon.sprites);
+
   if (loading === true) {
     return (
       <Dimmer active={loading}>
@@ -74,7 +74,7 @@ const Pokemon = () => {
               </Grid.Column>
 
               <Grid.Column width={8}>
-                <Image src={Logo} alt="logo" size="large" centered as='a' href='./' />
+                <Image src={Logo} alt="logo" size="large" centered />
                 <div className="pokebounce">
                   <Img data={id} />
                 </div>
