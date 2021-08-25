@@ -74,7 +74,7 @@ const Pokemon = () => {
               </Grid.Column>
 
               <Grid.Column width={8}>
-                <Image src={Logo} alt="logo" size="large" centered />
+                <Image src={Logo} alt="logo" size="large" centered as='a' href='./' />
                 <div className="pokebounce">
                   <Img data={id} />
                 </div>
