@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Container, Dimmer, Divider, Grid, Header, Image, Label, Progress, Segment } from "semantic-ui-react";
 import axios from "axios";
 
+import Sprites from "./components/helpers/Sprites";
 import Waves from "./components/waves/Waves";
 import Img from "./components/helpers/Img";
 
@@ -13,7 +14,6 @@ import { Link, useParams } from "react-router-dom";
 import Logo from "./resources/images/logo.gif";
 import loader from "./resources/images/loader_full.gif";
 import "./index.css";
-import Sprites from "./components/helpers/Sprites";
 
 const Pokemon = () => {
   document.body.classList.add("background-body");
@@ -21,6 +21,7 @@ const Pokemon = () => {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
   const [pokemon, setPokemon] = useState({ type: [], abilities: [] });
+
 
   useEffect(() => {
     const apiCall = async () => {

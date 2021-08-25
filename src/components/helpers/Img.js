@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Image } from "semantic-ui-react";
+import loaderImg from '../../resources/images/loader_img.gif';
 
 const Img = ({ data }) => {
+
+  const [img, setImg] = useState(loaderImg);
+
   const url = "https://assets.pokemon.com/assets/cms2/img/pokedex/full/";
 
   const correctionData = String(0) + String(data);
@@ -14,12 +18,9 @@ const Img = ({ data }) => {
 
   return (
     <>
-      <Image
-        src={url + fullData}
-        size="large"
-        alt={data}
-        centered
-      />
+      <Image src={img} size="large" alt={data} centered onLoad={() => {
+        setImg(url + fullData);
+      }} />
     </>
   );
 };
