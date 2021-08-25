@@ -57,9 +57,9 @@ const Pokemon = () => {
     return (
       <>
         <Container>
-          <Grid verticalAlign="middle" columns={4} centered>
+          <Grid verticalAlign="middle" columns={4} centered stackable>
             <Grid.Row>
-              <Grid.Column>
+              <Grid.Column only="computer">
                 <Stats name={"ID"} data={"#" + id} />
                 <Stats name={"Height"} data={hexToMt(pokemon.height)} />
                 <Stats name={"Weight"} data={hexToKg(pokemon.weight)} />
@@ -72,6 +72,7 @@ const Pokemon = () => {
                   ))}
                 />
               </Grid.Column>
+
               <Grid.Column width={8}>
                 <Image src={Logo} alt="logo" size="large" centered />
                 <div className="pokebounce">
@@ -83,6 +84,20 @@ const Pokemon = () => {
                     {upperCase(String(pokemon.name))}
                   </Header>
                 </Divider>
+              </Grid.Column>
+
+              <Grid.Column only="mobile">
+                <Stats name={"ID"} data={"#" + id} />
+                <Stats name={"Height"} data={hexToMt(pokemon.height)} />
+                <Stats name={"Weight"} data={hexToKg(pokemon.weight)} />
+                <Stats
+                  name={"Skills"}
+                  data={pokemon.abilities.map((x) => (
+                    <Label color="teal" key={x.ability.name}>
+                      {upperCase(x.ability.name)}
+                    </Label>
+                  ))}
+                />
               </Grid.Column>
               <Grid.Column>
                 <Stats
