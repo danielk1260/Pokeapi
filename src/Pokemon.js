@@ -40,7 +40,9 @@ const Pokemon = () => {
         sprites: poke.data.sprites,
       });
 
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000 * 1);
     };
 
     apiCall();

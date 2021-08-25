@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Dimmer, Image, Label, Loader, Segment } from "semantic-ui-react";
+import { Image, Label, Loader, Segment } from "semantic-ui-react";
 import { upperCase } from "../helpers/Functions";
 import Icon from "../icons/Icon";
 import loaderImg from '../../resources/images/loader_img.gif';
@@ -21,16 +21,18 @@ const Thumbnail = ({ data }) => {
         img: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${res.data.id}.png`,
         svg: res.data.sprites.other.dream_world.front_default
       });
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000 * 1.5);
     };
     apiCall();
   }, [data]);
 
   if (loading === true) {
     return (
-      <Dimmer active={loading}>
+      <Segment raised piled padded='very' loading={loading}>
         <Loader content="Loading..." />
-      </Dimmer>
+      </Segment>
     );
   }else{
     return (

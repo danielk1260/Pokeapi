@@ -30,7 +30,9 @@ const Main = () => {
         previous: getPokemon.data.previous,
         data: getPokemon.data.results,
       });
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 1000 * 1);
     };
     apiCall();
   }, [url]);
