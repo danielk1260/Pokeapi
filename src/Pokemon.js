@@ -8,7 +8,7 @@ import Img from "./components/helpers/Img";
 import { hexToKg, hexToMt, upperCase } from "./components/helpers/Functions";
 import Icons from "./components/icons/Icons";
 import { Stats } from "./components/helpers/Stats";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 import Logo from "./resources/images/logo.gif";
 import loader from "./resources/images/loader_full.gif";
@@ -74,7 +74,9 @@ const Pokemon = () => {
               </Grid.Column>
 
               <Grid.Column width={8}>
+              <Link to="/">
                 <Image src={Logo} alt="logo" size="large" centered />
+                </Link>
                 <div className="pokebounce">
                   <Img data={id} />
                 </div>

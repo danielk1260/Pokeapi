@@ -6,6 +6,7 @@ import "./index.css";
 import Thumbnail from "./components/thumbnail/Thumbnail";
 import Logo from "./resources/images/logo.gif";
 import loader from "./resources/images/loader_full.gif";
+import { Link } from "react-router-dom";
 
 
 const Main = () => {
@@ -57,7 +58,9 @@ const Main = () => {
   } else {
     return (
       <Container>
+        <Link to="/">
         <Image src={Logo} alt="logo" size="large" centered />
+        </Link>
         <Grid columns={3} centered stackable>
           {pokemon.data.map((res) => {
             return (
